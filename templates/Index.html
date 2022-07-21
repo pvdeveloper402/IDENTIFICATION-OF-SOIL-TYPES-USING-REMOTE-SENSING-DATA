@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <style>
+        body {
+            background: linear-gradient(-45deg, #43cbff, #970b77);
+        }
+        
+        .jumbotron {
+            background-color: #0af0c9;
+        }
+        
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: rgb(194, 194, 194);
+            padding: 25px 30px;
+        }
+        
+        .con1 {
+            margin-top: 30px;
+            max-width: 700px;
+            width: 100%;
+            background: rgb(194, 194, 194);
+            padding: 25px 30px;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script>
+        /* This values is input in teh band1 and pass to reflectance band value 1 after aplying the formula....*/
+
+        function multband1(value) {
+            var x1;
+            x1 = (0.00002 * value) + (-0.1)
+            document.getElementById('Reflectance1').value = x1;
+        }
+        /* This values is input in teh band2 and pass to reflectance band value 2 after aplying the formula....*/
+        function multband2(value) {
+
+            var x2;
+            x2 = (0.00002 * value) + (-0.1)
+            document.getElementById('Reflectance2').value = x2;
+        }
+        /* This values is input in teh band3 and pass to reflectance band value 3 after aplying the formula....*/
+        function multband3(value) {
+            var x3;
+            x3 = (0.00002 * value) + (-0.1)
+            document.getElementById('Reflectance3').value = x3;
+        }
+        /* This values is input in teh band4 and pass to reflectance band value 4 after aplying the formula....*/
+        function multband4(value) {
+            var x4;
+            x4 = (0.00002 * value) + (-0.1)
+            document.getElementById('Reflectance4').value = x4;
+        }
+        /* This values is input in teh band5 and pass to reflectance band value 5 after aplying the formula....*/
+        function multband5(value) {
+            var x5;
+            x5 = (0.00002 * value) + (-0.1)
+            document.getElementById('Reflectance5').value = x5;
+        }
+        /* This values is input in teh band6 and pass to reflectance band value 6 after aplying the formula....*/
+        function multband6(value) {
+            var x6;
+            x6 = (0.00002 * value) + (-0.1)
+            document.getElementById('Reflectance6').value = x6;
+        }
+        /* This values is input in teh band7 and pass to reflectance band value 7 after aplying the formula....*/
+        function multband7(value) {
+            var x7;
+            x7 = (0.00002 * value) + (-0.1)
+            document.getElementById('Reflectance7').value = x7;
+        }
+        /* This values is input in teh band9 and pass to reflectance band value 9 after aplying the formula....*/
+        function multband9(value) {
+            var x9;
+            x9 = (0.00002 * value) + (-0.1)
+            document.getElementById('Reflectance9').value = x9;
+        }
+        /* This values is input in teh band10 and pass to reflectance band value 10 after aplying the formula....*/
+
+        function multband10(value) {
+            var x10;
+            x10 = (0.00002 * value) + (-0.1)
+            document.getElementById('Reflectance10').value = x10;
+        }
+        /* This values is input in teh band11 and pass to reflectance band value 11 after aplying the formula....*/
+        function multband11(value) {
+            var x11;
+            x11 = (0.00002 * value) + (-0.1)
+            document.getElementById('Reflectance11').value = x11;
+        }
+
+
+        function myelevation(value) {
+            /* This is the sin of elevation of sun and output for CorrectivBand1.....*/
+            var z1, elevationofsun1, v1;
+            var y1 = document.getElementById('Reflectance1').value;
+            z1 = document.getElementById('phool').value;
+            elevationofsun1 = Math.sin(z1);
+            v1 = y1 / elevationofsun1;
+            document.getElementById('CorrectiveBand1').value = v1;
+            /* This is the sin of elevation of sun and output for CorrectivBand2.....*/
+
+            var z2, elevationofsun2, v2;
+            var y2 = document.getElementById('Reflectance2').value;
+            z2 = document.getElementById('phool').value;
+            elevationofsun2 = Math.sin(z2);
+            v2 = y2 / elevationofsun2;
+            document.getElementById('CorrectiveBand2').value = v2;
+
+            /* This is the sin of elevation of sun and output for CorrectivBand3.....*/
+
+            var z3, elevationofsun3, v3;
+            var y3 = document.getElementById('Reflectance3').value;
+            z3 = document.getElementById('phool').value;
+            elevationofsun3 = Math.sin(z3);
+            v3 = y3 / elevationofsun3;
+            document.getElementById('CorrectiveBand3').value = v3;
+
+            /* This is the sin of elevation of sun and output for CorrectivBand4.....*/
+
+            var z4, elevationofsun4, v4;
+            var y4 = document.getElementById('Reflectance4').value;
+            z4 = document.getElementById('phool').value;
+            elevationofsun4 = Math.sin(z4);
+            v4 = y4 / elevationofsun4;
+            document.getElementById('CorrectiveBand4').value = v4;
+
+            /* This is the sin of elevation of sun and output for CorrectivBand5.....*/
+
+            var z5, elevationofsun5, v5;
+            var y5 = document.getElementById('Reflectance5').value;
+            z5 = document.getElementById('phool').value;
+            elevationofsun5 = Math.sin(z5);
+            v5 = y5 / elevationofsun5;
+            document.getElementById('CorrectiveBand5').value = v5;
+
+            /* This is the sin of elevation of sun and output for CorrectivBand6.....*/
+
+            var z6, elevationofsun6, v6;
+            var y6 = document.getElementById('Reflectance6').value;
+            z6 = document.getElementById('phool').value;
+            elevationofsun6 = Math.sin(z6);
+            v6 = y6 / elevationofsun6;
+            document.getElementById('CorrectiveBand6').value = v6;
+
+
+            /* This is the sin of elevation of sun and output for CorrectivBand7.....*/
+
+            var z7, elevationofsun7, v7;
+            var y7 = document.getElementById('Reflectance7').value;
+            z7 = document.getElementById('phool').value;
+            elevationofsun7 = Math.sin(z7);
+            v7 = y7 / elevationofsun7;
+            document.getElementById('CorrectiveBand7').value = v7;
+
+
+            /* This is the sin of elevation of sun and output for CorrectivBand9.....*/
+
+            var z9, elevationofsun9, v9;
+            var y9 = document.getElementById('Reflectance9').value;
+            z9 = document.getElementById('phool').value;
+            elevationofsun9 = Math.sin(z9);
+            v9 = y9 / elevationofsun9;
+            document.getElementById('CorrectiveBand9').value = v9;
+
+
+            /* This is the sin of elevation of sun and output for CorrectivBand10.....*/
+
+            var z10, elevationofsun10, v10;
+            var y10 = document.getElementById('Reflectance10').value;
+            z10 = document.getElementById('phool').value;
+            elevationofsun10 = Math.sin(z10);
+            v10 = y10 / elevationofsun10;
+            document.getElementById('CorrectiveBand10').value = v10;
+
+
+            /* This is the sin of elevation of sun and output for CorrectivBand11.....*/
+
+            var z11, elevationofsun11, v11;
+            var y11 = document.getElementById('Reflectance11').value;
+            z11 = document.getElementById('phool').value;
+            elevationofsun11 = Math.sin(z11);
+            v11 = y11 / elevationofsun11;
+            document.getElementById('CorrectiveBand11').value = v11;
+
+        }
+
+
+        /* Here we will calculate the NDVI*/
+        function NDVIfunc(value) {
+            var bandvalue5, bandvalue4, NDVI;
+            bandvalue5 = Number(document.getElementById('Band5').value);
+            bandvalue4 = Number(document.getElementById('Band4').value);
+
+            NDVI = (bandvalue5 - bandvalue4) / (bandvalue5 + bandvalue4);
+            document.getElementById('NDVI').value = NDVI;
+
+            var SAVIvalue;
+            SAVIvalue = ((bandvalue5 - bandvalue4) / (bandvalue5 + bandvalue4)) * (1.5);
+            document.getElementById('SAVI').value = SAVIvalue;
+
+            var bandvalue2 = Number(document.getElementById('Band2').value);
+            var EVI, EVI1, EVI2;
+            EVI1 = (bandvalue5 - bandvalue4);
+            EVI2 = (bandvalue5 + 6) * (bandvalue4 - 7.5) * (bandvalue2 + 1.5);
+            EVI = (EVI1 / EVI2) * 2.5;
+
+
+            document.getElementById('EVI').value = EVI;
+
+
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+        
+        .topnav a {
+            float: right;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="topnav" style="width: 100%;">
+
+        <a href="soiltypes.html">Soil Types</a>
+        <a href="https://www.arcgis.com/index.html" target="_blank">ArcGIS</a>
+        <a href="https://earthexplorer.usgs.gov/" target="_blank">Earth Explorer</a>
+        <a href="https://www.google.com/maps" target="_blank">Google Map</a>
+        <a href="Index.html">Home</a>
+    </div>
+    <h2 style="text-align: center;font-weight:800px;color: white; font-size: 50px;font-style: italic ;margin-top: 2px; font-family: 'Times New Roman', Times, serif; font-weight: bold;"> IDENTIFICATION OF SOIL TYPES USING REMOTE SENSING DATA</h2>
+    <div class="container">
+
+
+        <form name="passbtn" action="." method="post">
+            <div class="col-md-4">
+                <p>Enter The Location</p>
+                <label><i style="color: black; font-weight: bold;">Location</i></label>
+                <input id="location" name="location" style="border-radius: 25px;" type="text" class="form-control" maxlength="30" placeholder="Latitude = 32.12345 , Longitude = 72.12345" required onkeyup="location(this.value);">
+            </div>
+
+            <p>{{abc}}</p>
+            <div class="col-md-12 padding 10px" style="margin-top: 15px; margin-left: 15px;">
+
+                <label for="start">Starting Date:</label>
+                <input type="date" id="start" name="start">
+
+                <label for="end">Ending Date:</label>
+                <input type="date" id="end" name="end"></div>
+
+
+            <div class="col-md-12 padding 10px" style="margin-top: 15px; margin-left: 150px;">
+                <button type="submit" style="border-radius: 25px;" class="btn btn-success col-md-2" class="btn btn-primary btn-block btn-large">Find Band Values</button>
+            </div>
+
+
+            <!-- <script>
+            </script>
+            <p id="test">1234678989</p>
+            <script type="text/javascript" {{ url_for( 'static', filename='valueSet.js' )}}></script>
+            <script type="text/javascript">
+                bands = myFunc({
+                    {
+                        band | tojson
+                    }
+                })
+                document.getElementById('Band1').value = bands[1];
+                console.log(5 + 6);
+            </script> -->
+        </form>
+
+        <h3 style="font-family: 'Times New Roman', Times, serif; font-weight:bold;"><u>Enter the values of bands at specific location using Spectral image</u></h3>
+        <form class="form-group" action="{{ url_for('getprediction')}}" method="post">
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-4">
+                    <label><i style="color: black; font-weight: bold;">Band 1</i></label>
+                    <input id="Band1" value={{b1}} name="Band1" style="border-radius: 25px;" type="text" class="form-control" maxlength="7" placeholder="Value of Band 1" required onkeyup="multband1(this.value); numbersonly1(this)">
+                    <script type="text/javascript">
+                        function numbersonly1(input) {
+                            var num = /[^0-9]/gi;
+                            input.value = input.value.replace(num, "");
+                        }
+                    </script>
+                </div>
+                <div class="col-md-4">
+                    <label><i style="color: black;font-weight: bold;">Band 2</i></label>
+                    <input id="Band2" value={{b2}} name="Band2" style="border-radius: 25px;" type="text" class="form-control" required placeholder="Value of Band 2" onkeyup="multband2(this.value), numbersonly2(this)">
+
+                    <script type="text/javascript">
+                        function numbersonly2(input) {
+                            var num = /[^0-9]/gi;
+                            input.value = input.value.replace(num, "");
+                        }
+                    </script>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <label><i style="color: black; font-weight: bold;">Band 3</i></label>
+                    <input id="Band3" value={{b3}} name="Band3" style="border-radius: 25px;" type="text" class="form-control" required placeholder="Value of Band 3" onkeyup="multband3(this.value); numbersonly3(this)">
+
+                    <script type="text/javascript">
+                        function numbersonly3(input) {
+                            var num = /[^0-9]/gi;
+                            input.value = input.value.replace(num, "");
+                        }
+                    </script>
+
+                </div>
+                <div class="col-md-4">
+                    <label><i style="color: black; font-weight: bold;">Band 4</i></label>
+                    <input id="Band4" value={{b4}} name="Band4" style="border-radius: 25px;" type="text" class="form-control" required placeholder="Value of Band 4" onkeyup="multband4(this.value); numbersonly4(this)">
+
+                    <script type="text/javascript">
+                        function numbersonly4(input) {
+                            var num = /[^0-9]/gi;
+                            input.value = input.value.replace(num, "");
+                        }
+                    </script>
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <label><i style="color: black;font-weight: bold;">Band 5</i></label>
+                    <input id="Band5" value={{b5}} name="Band5" style="border-radius: 25px;" type="text" class="form-control" required placeholder="Value of Band 5" onkeyup="multband5(this.value);NDVIfunc(this.value); numbersonly5(this)">
+
+                    <script type="text/javascript">
+                        function numbersonly5(input) {
+                            var num = /[^0-9]/gi;
+                            input.value = input.value.replace(num, "");
+                        }
+                    </script>
+                </div>
+                <div class="col-md-4">
+                    <label><i style="color: black; font-weight: bold;">Band 6</i></label>
+                    <input id="Band6" value={{b6}} name="Band6" style="border-radius: 25px;" type="text" class="form-control" required placeholder="Value of Band 6" onkeyup="multband6(this.value); numbersonly6(this)">
+
+                    <script type="text/javascript">
+                        function numbersonly6(input) {
+                            var num = /[^0-9]/gi;
+                            input.value = input.value.replace(num, "");
+                        }
+                    </script>
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <label><i style="color: black; font-weight: bold;">Band 7</i></label>
+                    <input id="Band7" value={{b7}} name="Band7" style="border-radius: 25px;" type="text" class="form-control" required placeholder="Value of Band 7" onkeyup="multband7(this.value); numbersonly7(this)">
+
+                    <script type="text/javascript">
+                        function numbersonly7(input) {
+                            var num = /[^0-9]/gi;
+                            input.value = input.value.replace(num, "");
+                        }
+                    </script>
+
+                </div>
+                <div class="col-md-4">
+                    <label><i style="color: black; font-weight: bold;">Band 9</i></label>
+                    <input id="Band9" value={{b9}} name="Band9" style="border-radius: 25px;" type="text" class="form-control" required placeholder="Value of Band 9" onkeyup="multband9(this.value); numbersonly9(this)">
+
+                    <script type="text/javascript">
+                        function numbersonly9(input) {
+                            var num = /[^0-9]/gi;
+                            input.value = input.value.replace(num, "");
+                        }
+                    </script>
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <label><i style="color: black; font-weight: bold;">Band 10</i></label>
+                    <input id="Band10" value={{b10}} name="Band10" style="border-radius: 25px;" type="text" class="form-control" required placeholder="Value of Band 10" onkeyup="multband10(this.value); numbersonly10(this)">
+
+                    <script type="text/javascript">
+                        function numbersonly10(input) {
+                            var num = /[^0-9]/gi;
+                            input.value = input.value.replace(num, "");
+                        }
+                    </script>
+
+                </div>
+                <div class="col-md-4">
+                    <label><i style="color: black; font-weight: bold;">Band 11</i></label>
+                    <input id="Band11" value={{b11}} name="Band11" style="border-radius: 25px;" type="text" class="form-control" required placeholder="Value of Band 11" onkeyup="multband11(this.value); numbersonly11(this)">
+
+                    <script type="text/javascript">
+                        function numbersonly11(input) {
+                            var num = /[^0-9]/gi;
+                            input.value = input.value.replace(num, "");
+                        }
+                    </script>
+
+                </div>
+
+            </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var band1 = document.getElementById('Band1').value;
+            var x1;
+            x1 = (0.00002 * band1) + (-0.1)
+            document.getElementById('Reflectance1').value = x1;
+
+            var band2 = document.getElementById('Band2').value;
+            var x2;
+            x2 = (0.00002 * band2) + (-0.1)
+            document.getElementById('Reflectance2').value = x2;
+
+            var band3 = document.getElementById('Band3').value;
+            var x3;
+            x3 = (0.00002 * band3) + (-0.1)
+            document.getElementById('Reflectance3').value = x3;
+
+            var band4 = document.getElementById('Band4').value;
+            var x4;
+            x4 = (0.00002 * band4) + (-0.1)
+            document.getElementById('Reflectance4').value = x4;
+
+            var band5 = document.getElementById('Band5').value;
+            var x5;
+            x5 = (0.00002 * band5) + (-0.1)
+            document.getElementById('Reflectance5').value = x5;
+
+            var band6 = document.getElementById('Band6').value;
+            var x6;
+            x6 = (0.00002 * band6) + (-0.1)
+            document.getElementById('Reflectance6').value = x6;
+
+            var band7 = document.getElementById('Band7').value;
+            var x7;
+            x7 = (0.00002 * band7) + (-0.1)
+            document.getElementById('Reflectance7').value = x7;
+
+            var band9 = document.getElementById('Band9').value;
+            var x9;
+            x9 = (0.00002 * band9) + (-0.1)
+            document.getElementById('Reflectance9').value = x9;
+
+            var band10 = document.getElementById('Band10').value;
+            var x10;
+            x10 = (0.00002 * band10) + (-0.1)
+            document.getElementById('Reflectance10').value = x10;
+
+            var band11 = document.getElementById('Band11').value;
+            var x11;
+            x11 = (0.00002 * band11) + (-0.1)
+            document.getElementById('Reflectance11').value = x11;
+
+            var bandvalue5, bandvalue4, NDVI;
+            bandvalue5 = Number(document.getElementById('Band5').value);
+            bandvalue4 = Number(document.getElementById('Band4').value);
+
+            NDVI = (bandvalue5 - bandvalue4) / (bandvalue5 + bandvalue4);
+            document.getElementById('NDVI').value = NDVI;
+
+            var SAVIvalue;
+            SAVIvalue = ((bandvalue5 - bandvalue4) / (bandvalue5 + bandvalue4)) * (1.5);
+            document.getElementById('SAVI').value = SAVIvalue;
+
+            var bandvalue2 = Number(document.getElementById('Band2').value);
+            var EVI, EVI1, EVI2;
+            EVI1 = (bandvalue5 - bandvalue4);
+            EVI2 = (bandvalue5 + 6) * (bandvalue4 - 7.5) * (bandvalue2 + 1.5);
+            EVI = (EVI1 / EVI2) * 2.5;
+
+
+            document.getElementById('EVI').value = EVI;
+
+
+        }
+    </script>
+
+    <div class="col-md-12 padding 10px" style="margin-top: 15px; margin-left: 950px;">
+        <button style="border-radius: 25px;" class="btn btn-success col-md-2" class="btn btn-primary btn-block btn-large" onclick="myFunction()">Find values</button>
+    </div>
+    <div class="container" style="margin-top: 15px;">
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <label><i style="color: black; font-weight: bold;">Sun Elevation</i></label>
+                <input name="Sun-elevation" id="phool" style="border-radius: 25px;" type="text" class="form-control" required onkeyup="myelevation(this.value);calEVI()" placeholder="Value Of Sun Elevation">
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <label><i style="color: black; font-weight: bold;">Reflectance Multiple Band 1</i></label>
+                <input id="Reflectance1" name="ReflectanceBand1" style="border-radius: 25px;" type="text" maxlength="7" class="form-control" placeholder="Value of Reflectance Mul-Band 1" readonly>
+            </div>
+            <div class="col-md-4">
+                <label><i style="color: black; font-weight: bold;">Reflectance Multiple Band 2</i></label>
+                <input id="Reflectance2" name="ReflectanceBand2" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Reflectance Mul-Band 2" readonly>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <label><i style="color: black; font-weight: bold;">Reflectance Multiple Band 3</i></label>
+                <input id="Reflectance3" name="ReflectanceBand3" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Reflectance Mul-Band 3" readonly>
+            </div>
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;">Reflectance Multiple Band 4</i></label>
+                <input id="Reflectance4" name="ReflectanceBand4" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Reflectance Mul-Band 4" readonly>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;">Reflectance Multiple Band 5</i></label>
+                <input id="Reflectance5" name="ReflectanceBand5" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Reflectance Mul-Band 5" readonly>
+            </div>
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;">Reflectance Multiple Band 6</i></label>
+                <input id="Reflectance6" name="ReflectanceBand6" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Reflectance Mul-Band 6" readonly>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;">Reflectance Multiple Band 7</i></label>
+                <input id="Reflectance7" name="ReflectanceBand7" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Reflectance Mul-Band 7" readonly>
+            </div>
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;">Reflectance Multiple Band 9</i></label>
+                <input id="Reflectance9" name="ReflectanceBand9" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Reflectance Mul-Band 9" readonly>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;">Reflectance Multiple Band 10</i></label>
+                <input id="Reflectance10" name="ReflectanceBand10" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Reflectance Mul-Band 10" readonly>
+            </div>
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;">Reflectance Multiple Band 11</i></label>
+                <input id="Reflectance11" name="ReflectanceBand11" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Reflectance Mul-Band 11" readonly>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;"> Corrective Reflectance Band 1</i></label>
+                <input id="CorrectiveBand1" name="CorrectiveReflectanceBand1" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Corrective Ref-Band 1" readonly>
+            </div>
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;">Corrective Reflectance Band 2</i></label>
+                <input id="CorrectiveBand2" name="CorrectiveReflectanceBand2" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Corrective Ref-Band 2" readonly>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <label><i style="color: black; font-weight: bold;"> Corrective Reflectance Band 3</i></label>
+                <input id="CorrectiveBand3" name="CorrectiveReflectanceBand3" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Corrective Ref-Band 3" readonly>
+            </div>
+            <div class="col-md-4">
+                <label><i style="color: black; font-weight: bold;"> Corrective Reflectance Band 4</i></label>
+                <input id="CorrectiveBand4" name="CorrectiveReflectanceBand4" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Corrective Ref-Band 4" readonly>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;"> Corrective Reflectance Band 5</i></label>
+                <input id="CorrectiveBand5" name="CorrectiveReflectanceBand5" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Corrective Ref-Band 5" readonly>
+            </div>
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;"> Corrective Reflectance Band 6</i></label>
+                <input id="CorrectiveBand6" name="CorrectiveReflectanceBand6" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Corrective Ref-Band 6" readonly>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;"> Corrective Reflectance Band 7</i></label>
+                <input id="CorrectiveBand7" name="CorrectiveReflectanceBand7" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Corrective Ref-Band 7" readonly>
+            </div>
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;"> Corrective Reflectance Band 9</i></label>
+                <input id="CorrectiveBand9" name="CorrectiveReflectanceBand9" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Corrective Ref-Band 9" readonly>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;"> Corrective Reflectance Band 10</i></label>
+                <input id="CorrectiveBand10" name="CorrectiveReflectanceBand10" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Corrective Ref-Band 10" readonly>
+            </div>
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;"> Corrective Reflectance Band 11</i></label>
+                <input id="CorrectiveBand11" name="CorrectiveReflectanceBand11" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value of Corrective Ref-Band 11" readonly>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+
+
+    <div class="container">
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;"> NDVI</i></label>
+                <input id="NDVI" name="NDVI" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value Of NDVI" readonly required onkeyup="SAVIfunc(this.value)">
+            </div>
+            <div class="col-md-4">
+                <label><i style="color: black;font-weight: bold;" >SAVI</i></label>
+                <input id="SAVI" name="SAVI" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value Of SAVI" readonly>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <label><i style="color: black;font-weight: bold;">EVI</i></label>
+                <input id="EVI" name="EVI" style="border-radius: 25px;" type="text" class="form-control" placeholder="Value Of EVI" readonly>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="container">
+
+
+
+        <div class="row">
+            <div class="col-md-12 padding 10px" style="margin-top: 15px; margin-left: 150px;">
+                <button type="submit" style="border-radius: 25px;" class="btn btn-success col-md-2" class="btn btn-primary btn-block btn-large">Pridict</button>
+                <button style="border-radius: 25px;" type="reset" class="btn btn-success col-md-2 ">Clear</button>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    </form>
+    <div class="col-md-10 padding 10px" style="padding: 20px; background-color: #0af0c9; font-size: 30px; margin-left: 105px;">
+        {{ output }}
+    </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
